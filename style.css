@@ -8,9 +8,6 @@ body {
 h1 {
     text-align: center;
   }
-div {
-    width: 480px;
-    height: 361px;
-    background: url(https://giphy.com/stickers/frog-ffxiv-khaiani-r1mMYnWsCQiATFCVjK) center center no-repeat;
-    background-size: 480px 361px;
+body {
+    text-align: center;
   }
