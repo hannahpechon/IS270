@@ -16,60 +16,6 @@
     <img src="https://media.giphy.com/media/L4fvMdn8rHwbjzvSmw/giphy.gif">
     <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGQ4dXUwcWdiYjY2bWlnY3NqY2V6eHkzZXljdHE0cHFtMm9idHB1ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/vsPwKM5h36GyPHUW2H/giphy.gif">
     <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3JiM2pzeWUwY2JpdnoyNWh2cjcybjlhdDRxb3NmdDZ6aG41N3U2cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ZVZTD5kaMZ2d7EEfRn/giphy.gif">
-     <script>
-        // Function to fetch data from NASA APOD API
-        function fetchNASAData() {
-            const apiKey = tN2wx2gzfQaIe8HuuITVfwM4XBYofdlgZjvrgQj9EY; // Replace with your actual NASA API key
-            const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${tN2wx2gzfQaIe8HuuITVfwM4XBYofdlgZjvrgQj9EY}`;
-
-            fetch(apiUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    displayNASAData(data);
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                    const apodContent = document.getElementById('apod-content');
-                    apodContent.innerHTML = '<p>Failed to fetch data from NASA APOD API.</p>';
-                });
-        }
-
-        // Function to display NASA data on the webpage
-        function displayNASAData(data) {
-            const apodContent = document.getElementById('apod-content');
-
-            // Create HTML elements to display the APOD data
-            const titleElement = document.createElement('h2');
-            titleElement.textContent = data.title;
-
-            const dateElement = document.createElement('p');
-            dateElement.textContent = `Date: ${data.date}`;
-
-            const explanationElement = document.createElement('p');
-            explanationElement.textContent = data.explanation;
-
-            const imageElement = document.createElement('img');
-            imageElement.src = data.url;
-            imageElement.alt = data.title;
-
-            // Clear previous content
-            apodContent.innerHTML = '';
-
-            // Append elements to the apodContent div
-            apodContent.appendChild(titleElement);
-            apodContent.appendChild(dateElement);
-            apodContent.appendChild(imageElement);
-            apodContent.appendChild(explanationElement);
-        }
-
-        // Call fetchNASAData when the page loads
-        window.onload = fetchNASAData;
-    </script>
     <p>Changes to this webpage include:</p>
     <p>adding a background gradient between two custom hex values</p>
     <p>adding several frog animated gifs</p>
